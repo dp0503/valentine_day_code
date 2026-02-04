@@ -1,5 +1,11 @@
 you can change the line if you want all line info will be here :
 
+you can change also the made by ( YOUR NAME ) :
+File: index.html
+Line: 426
+Exact line:
+<p class="footer-credit">Made by <span class="footer-name">Devarsh</span> 💗</p>
+
 change song acording your taste : 
 
 Method 1: Change in code (line 100)
