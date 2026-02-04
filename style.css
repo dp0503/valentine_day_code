@@ -1513,6 +1513,31 @@ body {
 
 .spotify-embed {
   margin-top: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.spotify-track-input {
+  padding: 10px 14px;
+  border: 2px solid rgba(255, 105, 180, 0.3);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.9);
+  font-size: 0.9rem;
+  color: var(--text-main);
+  outline: none;
+  transition: all var(--transition-med);
+  font-family: "Quicksand", sans-serif;
+}
+
+.spotify-track-input:focus {
+  border-color: rgba(255, 105, 180, 0.6);
+  box-shadow: 0 4px 12px rgba(255, 105, 180, 0.2);
+}
+
+.spotify-track-input::placeholder {
+  color: var(--text-soft);
+  opacity: 0.7;
 }
 
 .spotify-embed iframe {

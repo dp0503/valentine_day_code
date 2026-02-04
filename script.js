@@ -704,6 +704,73 @@ function updateGreeting(name, element) {
   }
 }
 
+/**
+ * Handle Spotify track input - allow users to change the song
+ */
+function attachSpotifyTrackInput() {
+  const trackInput = document.getElementById("spotifyTrackInput");
+  const spotifyPlayer = document.getElementById("spotifyPlayer");
+  
+  if (!trackInput || !spotifyPlayer) return;
+  
+  // Load saved track ID
+  try {
+    const savedTrackId = localStorage.getItem("spotifyTrackId");
+    if (savedTrackId) {
+      trackInput.value = savedTrackId;
+      updateSpotifyPlayer(savedTrackId, spotifyPlayer);
+    }
+  } catch (error) {
+    console.error("Error loading saved track:", error);
+  }
+  
+  // Update player when user types
+  let updateTimeout;
+  trackInput.addEventListener("input", (e) => {
+    clearTimeout(updateTimeout);
+    const trackId = e.target.value.trim();
+    
+    // Wait for user to stop typing (500ms delay)
+    updateTimeout = setTimeout(() => {
+      if (trackId && trackId.length > 0) {
+        updateSpotifyPlayer(trackId, spotifyPlayer);
+        
+        // Save to localStorage
+        try {
+          localStorage.setItem("spotifyTrackId", trackId);
+        } catch (error) {
+          console.error("Error saving track:", error);
+        }
+      }
+    }, 500);
+  });
+  
+  // Update on Enter key
+  trackInput.addEventListener("keypress", (e) => {
+    if (e.key === "Enter") {
+      const trackId = trackInput.value.trim();
+      if (trackId && trackId.length > 0) {
+        updateSpotifyPlayer(trackId, spotifyPlayer);
+        try {
+          localStorage.setItem("spotifyTrackId", trackId);
+        } catch (error) {
+          console.error("Error saving track:", error);
+        }
+      }
+    }
+  });
+}
+
+function updateSpotifyPlayer(trackId, player) {
+  // Clean the track ID (remove any URL parts)
+  const cleanTrackId = trackId.replace(/https?:\/\/open\.spotify\.com\/track\//, "").split("?")[0].trim();
+  
+  if (cleanTrackId && cleanTrackId.length > 0) {
+    const newSrc = `https://open.spotify.com/embed/track/${cleanTrackId}?utm_source=generator`;
+    player.src = newSrc;
+  }
+}
+
 // Initialize once DOM content is ready
 document.addEventListener("DOMContentLoaded", () => {
   startFloatingHearts();
@@ -717,6 +784,7 @@ document.addEventListener("DOMContentLoaded", () => {
   attachCursorTrail();
   attachEditableImages();
   attachNameInput();
+  attachSpotifyTrackInput();
   loadSavedImages();
   checkEmptyState();
 });
