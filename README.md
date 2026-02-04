@@ -1,5 +1,18 @@
 you can change the line if you want all line info will be here :
 
+change song acording your taste : 
+
+Method 1: Change in code (line 100)
+Open index.html
+Go to line 100
+Find: 5nXmr6ypbTYjhLR3lXSPyc
+Replace it with your Spotify track ID
+Save and refresh
+Method 2: Use the input box (on the website)
+There's an input box above the Spotify player (lines 92-97)
+Paste your Spotify track ID or full URL there
+The song updates automatically
+
 Line: 420
 
 <p class="footer-credit">Made by <span class="footer-name">Devarsh</span> 💗</p>
