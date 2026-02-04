@@ -8,6 +8,7 @@ Go to line 100
 Find: 5nXmr6ypbTYjhLR3lXSPyc
 Replace it with your Spotify track ID
 Save and refresh
+
 Method 2: Use the input box (on the website)
 There's an input box above the Spotify player (lines 92-97)
 Paste your Spotify track ID or full URL there
