@@ -1,5 +1,29 @@
 you can change the line if you want all line info will be here :
 
+
+Love note – first image
+File: index.html
+Line: 132
+Line content:
+    src=""
+Put your link here, for example:
+    src="images/love-note-1.jpg"
+Love note – second image
+File: index.html
+Line: 171
+Line content:
+    src=""
+Put your link here, for example:
+    src="images/love-note-2.jpg"
+Cover image
+File: index.html
+Line: 267
+Line content:
+    src=""
+Put your link here, for example:
+    src="images/cover.jpg"
+Only change the src="" part on those lines; everything else can stay the same.
+
 you can change also the made by ( YOUR NAME ) :
 File: index.html
 Line: 426
