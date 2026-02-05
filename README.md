@@ -1,6 +1,20 @@
 you can change the line if you want all line info will be here :
 
 
+
+ile: index.html
+Lines: 42–49
+Key parts:
+Line 45 – the input’s ID:
+  id="nameInput"
+Line 47 – the placeholder text (what you can change):
+  placeholder="Enter your name here..."
+Line 48 – maximum characters:
+  maxlength="30"
+Line 50 – the little heart label:
+  <span class="name-label">💕</span>
+
+
 Love note – first image
 File: index.html
 Line: 132
